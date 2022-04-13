@@ -21,6 +21,7 @@
 		D04E5C542807368A00D94AD4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C532807368A00D94AD4 /* APIError.swift */; };
 		D04E5C57280736C400D94AD4 /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C56280736C400D94AD4 /* LessonsService.swift */; };
 		D04E5C5A280736FF00D94AD4 /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C59280736FF00D94AD4 /* ResultState.swift */; };
+		D04E5C5D2807372300D94AD4 /* LessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C5C2807372300D94AD4 /* LessonsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D04E5C532807368A00D94AD4 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D04E5C56280736C400D94AD4 /* LessonsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
 		D04E5C59280736FF00D94AD4 /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
+		D04E5C5C2807372300D94AD4 /* LessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		D04E5C19280735C200D94AD4 /* IPSLessonViewer */ = {
 			isa = PBXGroup;
 			children = (
+				D04E5C5B2807371600D94AD4 /* ViewModel */,
 				D04E5C58280736F400D94AD4 /* States */,
 				D04E5C55280736B500D94AD4 /* Service */,
 				D04E5C522807367900D94AD4 /* Error */,
@@ -196,6 +199,14 @@
 				D04E5C59280736FF00D94AD4 /* ResultState.swift */,
 			);
 			path = States;
+			sourceTree = "<group>";
+		};
+		D04E5C5B2807371600D94AD4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D04E5C5C2807372300D94AD4 /* LessonsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				D04E5C5A280736FF00D94AD4 /* ResultState.swift in Sources */,
 				D04E5C512807365700D94AD4 /* LessonsEndpoint.swift in Sources */,
 				D04E5C1D280735C200D94AD4 /* SceneDelegate.swift in Sources */,
+				D04E5C5D2807372300D94AD4 /* LessonsViewModel.swift in Sources */,
 				D04E5C542807368A00D94AD4 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
