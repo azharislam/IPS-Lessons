@@ -19,6 +19,7 @@
 		D04E5C4E2807360400D94AD4 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C4D2807360400D94AD4 /* LessonsModel.swift */; };
 		D04E5C512807365700D94AD4 /* LessonsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C502807365700D94AD4 /* LessonsEndpoint.swift */; };
 		D04E5C542807368A00D94AD4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C532807368A00D94AD4 /* APIError.swift */; };
+		D04E5C57280736C400D94AD4 /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C56280736C400D94AD4 /* LessonsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D04E5C4D2807360400D94AD4 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
 		D04E5C502807365700D94AD4 /* LessonsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsEndpoint.swift; sourceTree = "<group>"; };
 		D04E5C532807368A00D94AD4 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		D04E5C56280736C400D94AD4 /* LessonsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		D04E5C19280735C200D94AD4 /* IPSLessonViewer */ = {
 			isa = PBXGroup;
 			children = (
+				D04E5C55280736B500D94AD4 /* Service */,
 				D04E5C522807367900D94AD4 /* Error */,
 				D04E5C4F2807364C00D94AD4 /* Endpoint */,
 				D04E5C4C280735F000D94AD4 /* Model */,
@@ -174,6 +177,14 @@
 				D04E5C532807368A00D94AD4 /* APIError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		D04E5C55280736B500D94AD4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D04E5C56280736C400D94AD4 /* LessonsService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04E5C1F280735C200D94AD4 /* ViewController.swift in Sources */,
+				D04E5C57280736C400D94AD4 /* LessonsService.swift in Sources */,
 				D04E5C4E2807360400D94AD4 /* LessonsModel.swift in Sources */,
 				D04E5C1B280735C200D94AD4 /* AppDelegate.swift in Sources */,
 				D04E5C512807365700D94AD4 /* LessonsEndpoint.swift in Sources */,
