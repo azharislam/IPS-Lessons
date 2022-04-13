@@ -16,6 +16,8 @@
 		D04E5C32280735C400D94AD4 /* IPSLessonViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C31280735C400D94AD4 /* IPSLessonViewerTests.swift */; };
 		D04E5C3C280735C400D94AD4 /* IPSLessonViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C3B280735C400D94AD4 /* IPSLessonViewerUITests.swift */; };
 		D04E5C3E280735C400D94AD4 /* IPSLessonViewerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C3D280735C400D94AD4 /* IPSLessonViewerUITestsLaunchTests.swift */; };
+		D04E5C4E2807360400D94AD4 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C4D2807360400D94AD4 /* LessonsModel.swift */; };
+		D04E5C512807365700D94AD4 /* LessonsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C502807365700D94AD4 /* LessonsEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D04E5C37280735C400D94AD4 /* IPSLessonViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPSLessonViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04E5C3B280735C400D94AD4 /* IPSLessonViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSLessonViewerUITests.swift; sourceTree = "<group>"; };
 		D04E5C3D280735C400D94AD4 /* IPSLessonViewerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSLessonViewerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D04E5C4D2807360400D94AD4 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
+		D04E5C502807365700D94AD4 /* LessonsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,10 @@
 		D04E5C19280735C200D94AD4 /* IPSLessonViewer */ = {
 			isa = PBXGroup;
 			children = (
-				D04E5C1A280735C200D94AD4 /* AppDelegate.swift */,
-				D04E5C1C280735C200D94AD4 /* SceneDelegate.swift */,
-				D04E5C1E280735C200D94AD4 /* ViewController.swift */,
-				D04E5C20280735C200D94AD4 /* Main.storyboard */,
-				D04E5C23280735C400D94AD4 /* Assets.xcassets */,
-				D04E5C25280735C400D94AD4 /* LaunchScreen.storyboard */,
+				D04E5C4F2807364C00D94AD4 /* Endpoint */,
+				D04E5C4C280735F000D94AD4 /* Model */,
+				D04E5C4B280735DC00D94AD4 /* Views */,
+				D04E5C4A280735CA00D94AD4 /* Misc */,
 				D04E5C28280735C400D94AD4 /* Info.plist */,
 			);
 			path = IPSLessonViewer;
@@ -125,6 +127,42 @@
 				D04E5C3D280735C400D94AD4 /* IPSLessonViewerUITestsLaunchTests.swift */,
 			);
 			path = IPSLessonViewerUITests;
+			sourceTree = "<group>";
+		};
+		D04E5C4A280735CA00D94AD4 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				D04E5C1A280735C200D94AD4 /* AppDelegate.swift */,
+				D04E5C1C280735C200D94AD4 /* SceneDelegate.swift */,
+				D04E5C20280735C200D94AD4 /* Main.storyboard */,
+				D04E5C25280735C400D94AD4 /* LaunchScreen.storyboard */,
+				D04E5C23280735C400D94AD4 /* Assets.xcassets */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		D04E5C4B280735DC00D94AD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D04E5C1E280735C200D94AD4 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D04E5C4C280735F000D94AD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D04E5C4D2807360400D94AD4 /* LessonsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D04E5C4F2807364C00D94AD4 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				D04E5C502807365700D94AD4 /* LessonsEndpoint.swift */,
+			);
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +297,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04E5C1F280735C200D94AD4 /* ViewController.swift in Sources */,
+				D04E5C4E2807360400D94AD4 /* LessonsModel.swift in Sources */,
 				D04E5C1B280735C200D94AD4 /* AppDelegate.swift in Sources */,
+				D04E5C512807365700D94AD4 /* LessonsEndpoint.swift in Sources */,
 				D04E5C1D280735C200D94AD4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
