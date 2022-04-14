@@ -26,6 +26,7 @@ class LessonsViewModel: ObservableObject, LessonsViewModelProtocol {
     
     init(service: LessonsService) {
         self.service = service
+        self.getLessons()
     }
     
     func getLessons() {
@@ -34,16 +35,16 @@ class LessonsViewModel: ObservableObject, LessonsViewModelProtocol {
         
         let cancellable = service
             .request(from: .getLessons)
-            .sink { res in
+            .sink(receiveCompletion: { res in
                 switch res {
                 case .finished:
                     self.state = .success(content: self.lessons)
                 case .failure(let error):
                     self.state = .failed(error: error)
                 }
-            } receiveValue: { response in
+            }, receiveValue: { response in
                 self.lessons = response.lessons
-            }
+            })
         
         self.cancellables.insert(cancellable)
     }

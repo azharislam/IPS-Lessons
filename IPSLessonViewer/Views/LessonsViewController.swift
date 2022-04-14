@@ -31,6 +31,8 @@ class LessonsViewController: UIViewController {
     private var lessonsSubscribers: AnyCancellable?
     private var tableView = UITableView()
     var viewModel = LessonsViewModel(service: LessonsService())
+    private var cancellables: Set<AnyCancellable> = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +42,16 @@ class LessonsViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        viewModel.getLessons()
+        self.bind()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    private func bind() {
+        viewModel.objectWillChange.sink { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }.store(in: &cancellables)
     }
     
     func setNavigation() {
@@ -71,6 +80,18 @@ extension LessonsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Strings.lessonCell, for: indexPath) as? LessonsTableViewCell else { return UITableViewCell()}
+        
+        switch viewModel.state {
+            
+        case .loading:
+            print("loading")
+        case .success(content: let content):
+            for lesson in content {
+                cell.set(lesson: lesson)
+            }
+        case .failed(error: let error):
+            print(error.localizedDescription)
+        }
 
         let lesson = viewModel.lessons[indexPath.row]
         cell.selectedBackgroundView = UIView()
