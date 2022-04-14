@@ -61,7 +61,7 @@ class LessonsViewController: UIViewController {
         appearance.backgroundColor = Colors.darkGrey
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.topItem?.title = "Lessons"
+        navigationController?.navigationBar.topItem?.title = Strings.lessons
     }
     
     private func configureTableView() {
@@ -81,18 +81,6 @@ extension LessonsViewController: UITableViewDelegate, UITableViewDataSource {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Strings.lessonCell, for: indexPath) as? LessonsTableViewCell else { return UITableViewCell()}
         
-        switch viewModel.state {
-            
-        case .loading:
-            print("loading")
-        case .success(content: let content):
-            for lesson in content {
-                cell.set(lesson: lesson)
-            }
-        case .failed(error: let error):
-            print(error.localizedDescription)
-        }
-
         let lesson = viewModel.lessons[indexPath.row]
         cell.selectedBackgroundView = UIView()
         cell.selectedBackgroundView?.backgroundColor = .darkGray
@@ -107,6 +95,14 @@ extension LessonsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let lesson = viewModel.lessons[indexPath.row]
+        let detailView = LessonDetailView(lesson: lesson)
+        let vc = UIHostingController(rootView: detailView)
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.navigationBar.isHidden = true
+        self.tableView.deselectRow(at: indexPath, animated: false)
 
     }
 }
