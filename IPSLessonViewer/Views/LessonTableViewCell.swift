@@ -10,7 +10,7 @@ import UIKit
 
 class LessonsTableViewCell: UITableViewCell {
     
-    var lessonImageView = UIImageView()
+    var lessonImageView = ThumbnailImageView()
     var lessonTitleLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -29,6 +29,7 @@ class LessonsTableViewCell: UITableViewCell {
     }
     
     func set(lesson: Lesson) {
+        lessonImageView.downloadImageFrom(urlString: lesson.thumbnail ?? "", imageMode: .scaleAspectFit)
         lessonTitleLabel.text = lesson.name
     }
     

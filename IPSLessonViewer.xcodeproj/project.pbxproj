@@ -24,6 +24,7 @@
 		D04E5C5D2807372300D94AD4 /* LessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C5C2807372300D94AD4 /* LessonsViewModel.swift */; };
 		D04E5C5F2807376700D94AD4 /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C5E2807376700D94AD4 /* LessonTableViewCell.swift */; };
 		D04E5C61280737A400D94AD4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C60280737A400D94AD4 /* Extensions.swift */; };
+		D04E5CC428087C3000D94AD4 /* LessonThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5CC328087C3000D94AD4 /* LessonThumbnailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D04E5C5C2807372300D94AD4 /* LessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewModel.swift; sourceTree = "<group>"; };
 		D04E5C5E2807376700D94AD4 /* LessonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
 		D04E5C60280737A400D94AD4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D04E5CC328087C3000D94AD4 /* LessonThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonThumbnailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				D04E5C1E280735C200D94AD4 /* LessonsViewController.swift */,
 				D04E5C5E2807376700D94AD4 /* LessonTableViewCell.swift */,
+				D04E5CC328087C3000D94AD4 /* LessonThumbnailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				D04E5C1B280735C200D94AD4 /* AppDelegate.swift in Sources */,
 				D04E5C5A280736FF00D94AD4 /* ResultState.swift in Sources */,
 				D04E5C512807365700D94AD4 /* LessonsEndpoint.swift in Sources */,
+				D04E5CC428087C3000D94AD4 /* LessonThumbnailView.swift in Sources */,
 				D04E5C1D280735C200D94AD4 /* SceneDelegate.swift in Sources */,
 				D04E5C5D2807372300D94AD4 /* LessonsViewModel.swift in Sources */,
 				D04E5C61280737A400D94AD4 /* Extensions.swift in Sources */,
