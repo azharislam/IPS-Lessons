@@ -11,12 +11,10 @@ import SwiftUI
 
 class LessonsViewController: UIViewController {
 
-    private var lessonsSubscribers: AnyCancellable?
     private var tableView = UITableView()
-    var viewModel = LessonsViewModel(service: LessonsService())
-    var lessons = [Lesson]()
+    private var viewModel = LessonsViewModel(service: LessonsService())
+    private var lessons = [Lesson]()
     private var cancellables: Set<AnyCancellable> = []
-    var isNext: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +24,6 @@ class LessonsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.bind()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.isHidden = false
     }
     
     private func bind() {
@@ -81,7 +77,7 @@ extension LessonsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let lesson = viewModel.lessons[indexPath.row]
-        let detailView = LessonDetailView(lesson: lesson, lessonsArray: viewModel.lessons)
+        let detailView = LessonDetailView(lesson: lesson)
         let vc = UIHostingController(rootView: detailView)
         self.navigationController?.pushViewController(vc, animated: true)
         self.tableView.deselectRow(at: indexPath, animated: false)

@@ -11,7 +11,6 @@ import AVKit
 struct LessonDetailView: View {
     
     var lesson: Lesson
-    var lessonsArray: [Lesson]
     @State var player: AVPlayer?
     @StateObject var viewModel = LessonsViewModel(service: LessonsService())
     
@@ -37,7 +36,7 @@ struct LessonDetailView: View {
                     .foregroundColor(.white)
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 10))
                 NavigationLink(destination: {
-                    LessonDetailView(lesson: returnNextIndex(), lessonsArray: lessonsArray)
+                    LessonDetailView(lesson: returnNextIndex())
                 }, label: {
                     HStack(alignment: .center, spacing: 0) {
                         Text("Next Lesson")
@@ -106,19 +105,19 @@ struct LessonDetailView: View {
     }
     
     func returnNextIndex() -> Lesson {
-        guard let currentIndex = lessonsArray.firstIndex(of: lesson) else {
+        guard let currentIndex = viewModel.lessons.firstIndex(of: lesson) else {
             return Lesson(id: 0, name: "", lessonDescription: "", thumbnail: "", videoURL: "")
         }
         var nextIndex = currentIndex+1
-        nextIndex = lessonsArray.indices.contains(nextIndex) ? nextIndex : 0
-        return lessonsArray[nextIndex]
+        nextIndex = viewModel.lessons.indices.contains(nextIndex) ? nextIndex : 0
+        return viewModel.lessons[nextIndex]
     }
 }
 
 
 struct LessonDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonDetailView(lesson: .dummyData, lessonsArray: [])
+        LessonDetailView(lesson: .dummyData)
     }
 }
 

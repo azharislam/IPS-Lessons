@@ -17,6 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navController = UINavigationController(rootViewController: LessonsViewController())
         navController.title = "Lessons"
+        navController.navigationBar.prefersLargeTitles = true
+        navController.navigationBar.isHidden = false
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = navController

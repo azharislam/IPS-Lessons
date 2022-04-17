@@ -13,12 +13,15 @@ class ThumbnailImageView: UIImageView {
     var imageURLString: String?
 
     func downloadImageFrom(urlString: String, imageMode: UIView.ContentMode) {
+        
         guard let url = URL(string: urlString) else { return }
         downloadImageFrom(url: url, imageMode: imageMode)
     }
 
     func downloadImageFrom(url: URL, imageMode: UIView.ContentMode) {
+        
         contentMode = imageMode
+        
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
             self.image = cachedImage
         } else {
