@@ -7,6 +7,23 @@
 
 import UIKit
 
+enum Strings {
+    static let lessons = "Lessons"
+    static let lessonCell = "LessonsTableViewCell"
+    static let rightArrow = "indicator"
+    static let leftArrow = "leftArrow"
+    static let download = "Download"
+    static let downloadLesson = "downloadVideo"
+    static let complete = "Complete"
+    static let okay = "OK"
+    static let nextLesson = "Next Lesson"
+    static let cancel = "Cancel"
+}
+
+enum Colors {
+    static let darkGrey = UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
+}
+
 extension UIView {
     
     func pin(to superView: UIView) {

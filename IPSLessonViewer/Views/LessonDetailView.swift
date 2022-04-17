@@ -11,8 +11,10 @@ import AVKit
 struct LessonDetailView: View {
     
     var lesson: Lesson
+    var lessonsArray: [Lesson]
     @State var player: AVPlayer?
     @StateObject var viewModel = LessonsViewModel(service: LessonsService())
+    
     
     @Environment(\.presentationMode) var presentationMode
     @StateObject var downloadModel = DownloadVideoService()
@@ -34,8 +36,20 @@ struct LessonDetailView: View {
                 Text(lesson.lessonDescription ?? "")
                     .foregroundColor(.white)
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 10))
+                NavigationLink(destination: {
+                    LessonDetailView(lesson: returnNextIndex(), lessonsArray: lessonsArray)
+                }, label: {
+                    HStack(alignment: .center, spacing: 0) {
+                        Text("Next Lesson")
+                            .foregroundColor(.blue)
+                            .padding(.all, 0)
+                        Image("indicator")
+                            .padding(.leading, 0)
+                    }
+                    .position(x: 300, y: 50)
+                    
+                })
                 Spacer()
-                
             } // VStack - Lesson Detail View
             
             .background(Color(Colors.darkGrey).edgesIgnoringSafeArea(.all))
@@ -91,18 +105,22 @@ struct LessonDetailView: View {
         .navigationBarHidden(true)
     }
     
-    func next(lesson: [Lesson]) -> Lesson {
-        var iterator = lesson.makeIterator()
-        return iterator.next()!
-      }
+    func returnNextIndex() -> Lesson {
+        guard let currentIndex = lessonsArray.firstIndex(of: lesson) else {
+            return Lesson(id: 0, name: "", lessonDescription: "", thumbnail: "", videoURL: "")
+        }
+        var nextIndex = currentIndex+1
+        nextIndex = lessonsArray.indices.contains(nextIndex) ? nextIndex : 0
+        return lessonsArray[nextIndex]
+    }
 }
 
 
-//struct LessonDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LessonDetailView(lesson: .dummyData)
-//    }
-//}
+struct LessonDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        LessonDetailView(lesson: .dummyData, lessonsArray: [])
+    }
+}
 
 struct LessonVideoPlayer: UIViewControllerRepresentable {
     

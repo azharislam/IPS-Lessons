@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navController = UINavigationController(rootViewController: LessonsViewController())
         navController.title = "Lessons"
-        navController.navigationBar.backgroundColor = Colors.darkGrey
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = navController

@@ -9,36 +9,19 @@ import UIKit
 import Combine
 import SwiftUI
 
-enum Strings {
-    static let lessons = "Lessons"
-    static let lessonCell = "LessonsTableViewCell"
-    static let rightArrow = "indicator"
-    static let leftArrow = "leftArrow"
-    static let download = "Download"
-    static let downloadLesson = "downloadVideo"
-    static let complete = "Complete"
-    static let okay = "OK"
-    static let nextLesson = "Next Lesson"
-    static let cancel = "Cancel"
-}
-
-enum Colors {
-    static let darkGrey = UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
-}
-
 class LessonsViewController: UIViewController {
 
     private var lessonsSubscribers: AnyCancellable?
     private var tableView = UITableView()
     var viewModel = LessonsViewModel(service: LessonsService())
+    var lessons = [Lesson]()
     private var cancellables: Set<AnyCancellable> = []
-
+    var isNext: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigation()
         configureTableView()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,7 +49,8 @@ class LessonsViewController: UIViewController {
     
     private func configureTableView() {
         view.addSubview(tableView)
-
+        tableView.backgroundColor = Colors.darkGrey
+        tableView.largeContentTitle = "HELLO"
         tableView.rowHeight = 100
         tableView.register(LessonsTableViewCell.self, forCellReuseIdentifier: Strings.lessonCell)
         tableView.delegate = self
@@ -97,11 +81,9 @@ extension LessonsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let lesson = viewModel.lessons[indexPath.row]
-        let detailView = LessonDetailView(lesson: lesson)
+        let detailView = LessonDetailView(lesson: lesson, lessonsArray: viewModel.lessons)
         let vc = UIHostingController(rootView: detailView)
-        vc.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(vc, animated: true)
-        navigationController?.navigationBar.isHidden = true
+        self.navigationController?.pushViewController(vc, animated: true)
         self.tableView.deselectRow(at: indexPath, animated: false)
 
     }
