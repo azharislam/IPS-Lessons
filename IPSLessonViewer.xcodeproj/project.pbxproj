@@ -28,7 +28,6 @@
 		D04E5CC6280882CB00D94AD4 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5CC5280882CB00D94AD4 /* LessonDetailView.swift */; };
 		D04E5CC82808830900D94AD4 /* VideoDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5CC72808830900D94AD4 /* VideoDownloadService.swift */; };
 		D04E5CCA2808839C00D94AD4 /* DownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5CC92808839C00D94AD4 /* DownloadProgressView.swift */; };
-		D04E5CCC280B50A400D94AD4 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5CCB280B50A400D94AD4 /* NextButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,6 @@
 		D04E5CC5280882CB00D94AD4 /* LessonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
 		D04E5CC72808830900D94AD4 /* VideoDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDownloadService.swift; sourceTree = "<group>"; };
 		D04E5CC92808839C00D94AD4 /* DownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProgressView.swift; sourceTree = "<group>"; };
-		D04E5CCB280B50A400D94AD4 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +123,7 @@
 		D04E5C19280735C200D94AD4 /* IPSLessonViewer */ = {
 			isa = PBXGroup;
 			children = (
+				D0BE28E7280BDE4E00626498 /* VideoDownload */,
 				D04E5C5B2807371600D94AD4 /* ViewModel */,
 				D04E5C58280736F400D94AD4 /* States */,
 				D04E5C55280736B500D94AD4 /* Service */,
@@ -175,8 +174,6 @@
 				D04E5C5E2807376700D94AD4 /* LessonTableViewCell.swift */,
 				D04E5CC328087C3000D94AD4 /* LessonThumbnailView.swift */,
 				D04E5CC5280882CB00D94AD4 /* LessonDetailView.swift */,
-				D04E5CC92808839C00D94AD4 /* DownloadProgressView.swift */,
-				D04E5CCB280B50A400D94AD4 /* NextButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				D04E5C56280736C400D94AD4 /* LessonsService.swift */,
-				D04E5CC72808830900D94AD4 /* VideoDownloadService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -228,6 +224,15 @@
 				D04E5C5C2807372300D94AD4 /* LessonsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D0BE28E7280BDE4E00626498 /* VideoDownload */ = {
+			isa = PBXGroup;
+			children = (
+				D04E5CC72808830900D94AD4 /* VideoDownloadService.swift */,
+				D04E5CC92808839C00D94AD4 /* DownloadProgressView.swift */,
+			);
+			path = VideoDownload;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,7 +372,6 @@
 				D04E5C4E2807360400D94AD4 /* LessonsModel.swift in Sources */,
 				D04E5C5F2807376700D94AD4 /* LessonTableViewCell.swift in Sources */,
 				D04E5C1B280735C200D94AD4 /* AppDelegate.swift in Sources */,
-				D04E5CCC280B50A400D94AD4 /* NextButton.swift in Sources */,
 				D04E5C5A280736FF00D94AD4 /* ResultState.swift in Sources */,
 				D04E5CC82808830900D94AD4 /* VideoDownloadService.swift in Sources */,
 				D04E5CCA2808839C00D94AD4 /* DownloadProgressView.swift in Sources */,

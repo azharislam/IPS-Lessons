@@ -120,20 +120,3 @@ struct LessonDetailView_Previews: PreviewProvider {
         LessonDetailView(lesson: .dummyData)
     }
 }
-
-struct LessonVideoPlayer: UIViewControllerRepresentable {
-    
-    @Binding var player : AVPlayer
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<LessonVideoPlayer>) -> some AVPlayerViewController {
-        let controller = AVPlayerViewController()
-        controller.player = player
-        controller.showsPlaybackControls = true
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
-    }
-    
-}
