@@ -84,5 +84,3 @@ extension LessonsViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
 }
-
-

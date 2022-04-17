@@ -26,6 +26,9 @@ struct LessonDetailView: View {
                     .onAppear() {
                         player = AVPlayer(url: URL(string: lesson.videoURL ?? "")!)
                     }
+                    .onDisappear(perform: {
+                        player?.pause()
+                    })
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 Text(lesson.name ?? "")
                     .foregroundColor(.white)
@@ -35,6 +38,7 @@ struct LessonDetailView: View {
                 Text(lesson.lessonDescription ?? "")
                     .foregroundColor(.white)
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 10))
+                    .fixedSize(horizontal: false, vertical: true)
                 NavigationLink(destination: {
                     LessonDetailView(lesson: returnNextIndex())
                 }, label: {
@@ -48,6 +52,7 @@ struct LessonDetailView: View {
                     .position(x: 300, y: 50)
                     
                 })
+                .isDetailLink(false)
                 Spacer()
             } // VStack - Lesson Detail View
             
@@ -55,7 +60,7 @@ struct LessonDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
                 leading: Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
+                    NavigationHelper.popToRootView()
                 }, label: {
                     HStack(alignment: .center, spacing: 3) {
                         Image("leftArrow")
@@ -119,4 +124,21 @@ struct LessonDetailView_Previews: PreviewProvider {
     static var previews: some View {
         LessonDetailView(lesson: .dummyData)
     }
+}
+
+struct LessonVideoPlayer: UIViewControllerRepresentable {
+    
+    @Binding var player : AVPlayer
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<LessonVideoPlayer>) -> some AVPlayerViewController {
+        let controller = AVPlayerViewController()
+        controller.player = player
+        controller.showsPlaybackControls = true
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
+    }
+    
 }
