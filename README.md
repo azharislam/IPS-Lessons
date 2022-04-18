@@ -1,6 +1,3 @@
-# IPS-Lessons
-IPS Tech Test
-
 # IPS Lesson Viewer
 
 A tech test for iPhone Photography School - iOS Developer position.
