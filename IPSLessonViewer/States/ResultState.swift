@@ -7,7 +7,16 @@
 
 import Foundation
 
-enum ResultState {
+enum ResultState: Equatable {
+    static func == (lhs: ResultState, rhs: ResultState) -> Bool {
+        switch (lhs, rhs) {
+        case (.loading, .loading): return true
+        case (.success, .success): return true
+        case (.failed, .failed): return true
+        default: return false
+        }
+    }
+    
     case loading
     case success(content: [Lesson])
     case failed(error: Error)

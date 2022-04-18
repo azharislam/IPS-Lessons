@@ -18,13 +18,13 @@ protocol LessonsViewModelProtocol {
 
 class LessonsViewModel: ObservableObject, LessonsViewModelProtocol {
     
-    private let service: LessonsService
+    private let service: LessonsServiceProtocol
     private(set) var lessons = [Lesson]()
     private var cancellables = Set<AnyCancellable>()
     
     @Published private(set) var state: ResultState = .loading
     
-    init(service: LessonsService) {
+    init(service: LessonsServiceProtocol) {
         self.service = service
         self.getLessons()
     }
@@ -45,7 +45,7 @@ class LessonsViewModel: ObservableObject, LessonsViewModelProtocol {
             }, receiveValue: { response in
                 self.lessons = response.lessons
             })
-        
+
         self.cancellables.insert(cancellable)
     }
 }

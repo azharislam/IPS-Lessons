@@ -13,7 +13,6 @@
 		D04E5C22280735C200D94AD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04E5C20280735C200D94AD4 /* Main.storyboard */; };
 		D04E5C24280735C400D94AD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04E5C23280735C400D94AD4 /* Assets.xcassets */; };
 		D04E5C27280735C400D94AD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04E5C25280735C400D94AD4 /* LaunchScreen.storyboard */; };
-		D04E5C32280735C400D94AD4 /* IPSLessonViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C31280735C400D94AD4 /* IPSLessonViewerTests.swift */; };
 		D04E5C3C280735C400D94AD4 /* IPSLessonViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C3B280735C400D94AD4 /* IPSLessonViewerUITests.swift */; };
 		D04E5C3E280735C400D94AD4 /* IPSLessonViewerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C3D280735C400D94AD4 /* IPSLessonViewerUITestsLaunchTests.swift */; };
 		D04E5C4E2807360400D94AD4 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5C4D2807360400D94AD4 /* LessonsModel.swift */; };
@@ -28,6 +27,7 @@
 		D04E5CC6280882CB00D94AD4 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5CC5280882CB00D94AD4 /* LessonDetailView.swift */; };
 		D04E5CC82808830900D94AD4 /* VideoDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5CC72808830900D94AD4 /* VideoDownloadService.swift */; };
 		D04E5CCA2808839C00D94AD4 /* DownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E5CC92808839C00D94AD4 /* DownloadProgressView.swift */; };
+		D0BE290E280D159E00626498 /* LessonsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BE290D280D159E00626498 /* LessonsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,6 @@
 		D04E5C26280735C400D94AD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D04E5C28280735C400D94AD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04E5C2D280735C400D94AD4 /* IPSLessonViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPSLessonViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D04E5C31280735C400D94AD4 /* IPSLessonViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSLessonViewerTests.swift; sourceTree = "<group>"; };
 		D04E5C37280735C400D94AD4 /* IPSLessonViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPSLessonViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04E5C3B280735C400D94AD4 /* IPSLessonViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSLessonViewerUITests.swift; sourceTree = "<group>"; };
 		D04E5C3D280735C400D94AD4 /* IPSLessonViewerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSLessonViewerUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		D04E5CC5280882CB00D94AD4 /* LessonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
 		D04E5CC72808830900D94AD4 /* VideoDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDownloadService.swift; sourceTree = "<group>"; };
 		D04E5CC92808839C00D94AD4 /* DownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProgressView.swift; sourceTree = "<group>"; };
+		D0BE290D280D159E00626498 /* LessonsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,7 @@
 		D04E5C30280735C400D94AD4 /* IPSLessonViewerTests */ = {
 			isa = PBXGroup;
 			children = (
-				D04E5C31280735C400D94AD4 /* IPSLessonViewerTests.swift */,
+				D0BE290D280D159E00626498 /* LessonsViewModelTests.swift */,
 			);
 			path = IPSLessonViewerTests;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D04E5C32280735C400D94AD4 /* IPSLessonViewerTests.swift in Sources */,
+				D0BE290E280D159E00626498 /* LessonsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
