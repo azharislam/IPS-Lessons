@@ -11,7 +11,7 @@ A tech test for iPhone Photography School - iOS Developer position.
 
 No third party libraries were used creating this project. 
 ```bash
-  git clone REPO
+  git clone https://github.com/azharislam/IPS-Lessons.git
 ```
 Simply clone the repo and run on Xcode via Simulator or Device (will only run on iOS 15.0 and above)
 
