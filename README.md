@@ -1,7 +1,6 @@
 # IPS Lesson Viewer
 
-A tech test for iPhone Photography School - iOS Developer position.
-
+A list of lesson videos fetched from an API and populated using SwiftUI/UIKit views.
 
 
 ## Installation
